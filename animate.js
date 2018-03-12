@@ -30,6 +30,7 @@ var circle = function(e){
     nodes.push(c);
     svg.appendChild(c);
     id = setInterval(move,10);
+    this.stopPropagation();
 }
 
 
@@ -51,7 +52,9 @@ var move = function(){
 	var yInc = parseInt(nodes[i].getAttribute("yInc"));
 	var newY = (yVal + yInc);
 	nodes[i].setAttribute("cy", newY);
+
     }
+    
 };
 
 clear.addEventListener("click", clearIt);
